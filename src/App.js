@@ -1,25 +1,16 @@
-import logo from './logo.svg';
-import './App.css';
-
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+import "./app.css"
+import Topbar from "./Components/Topbar/Topbar"
+import News from "./Components/News/News"
+import { Provider } from "react-redux"
+import store from "./Components/Store/ConfigStore"
+export default function App(){
+  return(
+    <div className="main">
+      <Provider store={store}>
+        <Topbar/>
+        <News/>
+      </Provider>
+     
     </div>
-  );
+  )
 }
-
-export default App;
